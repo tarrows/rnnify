@@ -34,3 +34,11 @@ fn test_affine_it_works() {
   let affine = Affine { weight, bias };
   assert_eq!(affine.forward(x_in), array![10., 14.,]);
 }
+
+#[test]
+fn test_sigmoid_it_works() {
+  let a = array![1., 2.];
+  let b = array![2.7182817, 7.389056];
+  let sigm = Sigmoid {};
+  assert!((sigm.forward(a) - b).iter().all(|x| x.abs() < 0.00001));
+}
