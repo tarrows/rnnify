@@ -19,6 +19,13 @@ impl Affine {
   }
 }
 
+pub struct Sigmoid {}
+impl Sigmoid {
+  pub fn forward(&self, x: Array1<f32>) -> Array1<f32> {
+    x.mapv(|x| 1.0 / f32::exp(-x))
+  }
+}
+
 #[test]
 fn test_affine_it_works() {
   let x_in = array![0., 1., 2.];
