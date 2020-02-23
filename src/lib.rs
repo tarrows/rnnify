@@ -1,7 +1,6 @@
 extern crate ndarray;
 use ndarray::prelude::*;
-
-mod layers;
+pub mod layers;
 
 fn sigmoid_f32(x: f32) -> f32 {
   1.0 / f32::exp(-x)
